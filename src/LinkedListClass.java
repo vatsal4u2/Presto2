@@ -36,6 +36,29 @@ public class LinkedListClass {
         prev_node.next = new_node;
     }
 
+    public Node reverseList(Node node){
+        Node next = null;
+        Node current =  head;
+        Node previous = null;
+        while (current != null){
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        node = previous;
+        return node;
+    }
+
+    public void printList(Node node) {
+        while (node != null) {
+            System.out.print(node.data + " ");
+            node = node.next;
+        }
+    }
+
+
+
     public static void main(String[] arg){
 
         LinkedListClass listClass = new LinkedListClass();
@@ -49,7 +72,8 @@ public class LinkedListClass {
         third.next = fourth;
         listClass.push(0);
         listClass.insetAfter(listClass.head.next,8);
-
         listClass.printList();
+        listClass.printList(listClass.reverseList(listClass.head));
+
     }
 }

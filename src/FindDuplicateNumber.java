@@ -5,8 +5,7 @@ public class FindDuplicateNumber {
     public int duplicateNumber(List<Integer> numbers){
        int highestNumber = numbers.size() - 1;
        int total =sum(numbers);
-       int duplicate = total - (highestNumber*(highestNumber+1)/2);
-       return duplicate;
+        return total - (highestNumber*(highestNumber+1)/2);
    }
 
     private int sum(List<Integer> array){
